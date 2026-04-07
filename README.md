@@ -1,4 +1,4 @@
-# processing axidraw pattern tool
+# Outil Processing de converssion en trame de traits
 A fork of a project by JN Lafargue (for his students at ÉSADHAR) for plotting bitmap images using Axidraw. #bantamtools #axidraw #processinf #linestrip
 
 Sketch **Processing 4** pour générer une **trame vectorielle** (lignes) à partir d’une image, avec prévisualisation et **export SVG** adaptés à la gravure / au traceur (Inkscape, AxiDraw, Bantamtools, découpe laser etc.).
