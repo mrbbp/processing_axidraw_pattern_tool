@@ -14,16 +14,16 @@ Sketch **Processing 4** pour générer une **trame vectorielle** (lignes) à pa
 
 Le **cœur algorithmique** du projet repose sur le travail de **Jean-Noël Lafargue** : pipeline `traitementDuneImage`, fonction `getLignes`, logique de tramage par calques (seuils de luminosité, pas et angles) et export SVG « classique ». Les évolutions listées ci-dessous s’ajoutent à cette base sans la remplacer.
 
-## Ce que fait l’outil (résumé)
+## Ce que fait l’outil
 
-1. **Charger** une image PNG, JPG ou GIF (sélecteur de fichiers ou **glisser-déposer** avec la bibliothèque [Drop](https://sojamo.de/libraries/drop/) — sojamo).
+1. **Charger** une image PNG, JPG ou GIF pas simple DragNDrop (par sélecteur de fichiers ou **glisser-déposer** avec la bibliothèque [Drop](https://sojamo.de/libraries/drop/) — sojamo).
 2. **Tramer** l’image : plusieurs **calques** correspondent à des niveaux de gris (seuils interpolés) et à des directions de hachure ; les segments sont calculés le long de rayons de balayage (`getLignes` dans `tramage_lignes.pde`).
 3. **Régler** les paramètres via **ControlP5** : nombre de calques, seuils mini/maxi, écart entre traits, angle de départ, ton de l’aperçu, option **photo en noir et blanc** pour le tramage (défaut activé), optimisation du nombre de segments (fusion / longueur minimale).
 4. **Exporter** des SVG horodatés dans le dossier `exports/` : un fichier par calque, un seul fichier multi-calques compatible **Inkscape** (`inkscape:layer`), ou un SVG monocouche selon le mode.
 
-Les réglages sont **enregistrés** dans `data/reglages.json` (voir l’en-tête de `settings_json.pde` pour le détail des clés).
+Les réglages des sliders sont **enregistrés** dans `data/reglages.json` (voir l’en-tête de `settings_json.pde` pour le détail des clés).
 
-## Fonctionnalités notables (par rapport au noyau d’origine)
+## Fonctionnalités ajoutées (par rapport au noyau d’origine - prompté par @mrbbp et codé par @cursorai/composer2.0)
 
 - Interface **ControlP5** (sliders, boutons, événements).
 - **Ton** sur l’aperçu (contraste + luminosité) ; calque photo temporaire pendant la manipulation du curseur.
@@ -35,11 +35,13 @@ Les réglages sont **enregistrés** dans `data/reglages.json` (voir l’en-tête
 
 ## Prérequis
 
-- [Processing 4](https://processing.org/)
+- **[Processing 4](https://processing.org/)**
 - Bibliothèques à installer via le gestionnaire de contributions :
   - **ControlP5** — [sojamo](https://www.sojamo.de/libraries/controlP5/)
   - **Drop** — [sojamo](https://sojamo.de/libraries/drop/)
-- Ressource dans `data/` : police **Silkscreen-Regular-8.vlw** (interface ControlP5) ; Helvetica est créée par le code pour les textes avec accents.
+- Ressource dans `data/` :
+  - police **Silkscreen-Regular-8.vlw** (interface ControlP5) ; proposée en license adéquat par Google Fonts. Est utilisée pour les textes avec accents dans l'interface ControlP5 (me fatiguent ces anglosaxons :/).
+  - deux images fournies par l'auteur du code original
 
 ## Structure des onglets (.pde)
 
@@ -58,7 +60,7 @@ Les réglages sont **enregistrés** dans `data/reglages.json` (voir l’en-tête
 - **O** — ouvrir une image  
 - **S** — export SVG « fichiers séparés » (équivalent au bouton du panneau)
 
-Les boutons du panneau couvrent aussi l’export **multi-calques** en un seul fichier SVG.
+Les boutons du panneau couvrent aussi l’export **multi-calques** en un seul fichier SVG (compatible avec les "calques" d'Inkscape)
 
 ## Licence et réutilisation
 
