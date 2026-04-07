@@ -23,7 +23,7 @@ Le **cœur algorithmique** du projet repose sur le travail de **Jean-Noël Lafar
 
 Les réglages des sliders sont **enregistrés** dans `data/reglages.json` (voir l’en-tête de `settings_json.pde` pour le détail des clés).
 
-## Fonctionnalités ajoutées (par rapport au noyau d’origine - prompté par @mrbbp et codé par @cursorai/composer2.0)
+## Fonctionnalités ajoutées (par rapport au noyau d’origine - promptées par @mrbbp et codées par @cursorai/composer2.0)
 
 - Interface **ControlP5** (sliders, boutons, événements).
 - **Ton** sur l’aperçu (contraste + luminosité) ; calque photo temporaire pendant la manipulation du curseur.
